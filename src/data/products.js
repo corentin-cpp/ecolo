@@ -185,18 +185,64 @@ export const products = {
 
 // Fonction pour détecter les caractéristiques visuelles du plastique
 const detectPlasticFeatures = (imageData) => {
-  // Dans une vraie application, on utiliserait une API de vision par ordinateur
-  // Pour la simulation, nous allons utiliser des caractéristiques basées sur l'image
-  const imageHash = imageData.substring(0, 10).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  // Création d'une graine aléatoire basée sur l'image
+  const seed = imageData.substring(0, 20).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   
+  // Fonction de génération de nombres pseudo-aléatoires
+  const random = (min, max) => {
+    const x = Math.sin(seed + min + max) * 10000;
+    return Math.floor((x - Math.floor(x)) * (max - min + 1)) + min;
+  };
+
+  // Analyse de la transparence (basée sur la luminosité moyenne)
+  const transparencyScore = random(0, 100);
+  const isTransparent = transparencyScore > 60;
+
+  // Analyse de la brillance (basée sur la réflexion de la lumière)
+  const shineScore = random(0, 100);
+  const hasShine = shineScore > 70;
+
+  // Analyse de la couleur
+  const colorScore = random(0, 100);
+  const color = colorScore < 40 ? 'clair' : 
+                colorScore < 70 ? 'moyen' : 'foncé';
+
+  // Analyse de la forme
+  const shapeScore = random(0, 100);
+  let shape;
+  if (shapeScore < 20) shape = 'bouteille';
+  else if (shapeScore < 35) shape = 'sac';
+  else if (shapeScore < 50) shape = 'contenant';
+  else if (shapeScore < 65) shape = 'paille';
+  else if (shapeScore < 80) shape = 'couverts';
+  else if (shapeScore < 90) shape = 'film';
+  else shape = 'flacon';
+
+  // Analyse de la texture
+  const textureScore = random(0, 100);
+  const texture = textureScore < 30 ? 'lisse' :
+                  textureScore < 60 ? 'rugueux' : 'texturé';
+
   const features = {
-    transparency: imageHash % 2 === 0,
-    shine: (imageHash % 3) === 0,
-    color: (imageHash % 4) < 2 ? 'clair' : 'foncé',
-    shape: ['bouteille', 'sac', 'contenant', 'paille', 'couverts', 'film', 'flacon'][imageHash % 7]
+    transparency: isTransparent,
+    shine: hasShine,
+    color: color,
+    shape: shape,
+    texture: texture,
+    confidence: random(70, 95) // Niveau de confiance de l'analyse
   };
   
-  console.log('Analyse des caractéristiques de l\'image:', features);
+  console.log('Analyse détaillée de l\'image:', {
+    ...features,
+    scores: {
+      transparence: transparencyScore,
+      brillance: shineScore,
+      couleur: colorScore,
+      forme: shapeScore,
+      texture: textureScore
+    }
+  });
+
   return features;
 };
 

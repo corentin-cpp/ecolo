@@ -31,6 +31,12 @@
           <div class="spinner"></div>
           <p>Analyse en cours...</p>
           <p class="analysis-details">{{ analysisMessage }}</p>
+          <div class="analysis-progress" v-if="analysisProgress">
+            <div class="progress-bar">
+              <div class="progress" :style="{ width: analysisProgress + '%' }"></div>
+            </div>
+            <p>{{ analysisProgress }}%</p>
+          </div>
         </div>
       </div>
 
@@ -47,8 +53,18 @@
           <p>{{ getScoreMessage(scannedProduct.score) }}</p>
         </div>
 
+        <div class="analysis-details" v-if="analysisFeatures">
+          <h3>Détails de l'analyse</h3>
+          <div class="features-grid">
+            <div class="feature-item" v-for="(value, key) in filteredFeatures" :key="key">
+              <span class="feature-label">{{ formatFeatureLabel(key) }}</span>
+              <span class="feature-value" :class="getFeatureClass(key, value)">{{ formatFeatureValue(key, value) }}</span>
+            </div>
+          </div>
+        </div>
+
         <div class="details-section">
-          <h3>Détails de l'impact environnemental</h3>
+          <h3>Impact environnemental</h3>
           <div class="impact-details">
             <div class="impact-item" v-for="(detail, index) in scannedProduct.impactDetails" :key="index">
               <span class="impact-label">{{ detail.label }}</span>
@@ -94,6 +110,8 @@ export default {
       scannedProduct: null,
       isAnalyzing: false,
       analysisMessage: 'Analyse de l\'image...',
+      analysisProgress: 0,
+      analysisFeatures: null,
       products
     }
   },
@@ -101,19 +119,48 @@ export default {
     async openScanner() {
       this.isAnalyzing = true;
       this.analysisMessage = 'Analyse de l\'image...';
+      this.analysisProgress = 0;
       
-      // Simulation d'un scan
+      // Simulation de la progression de l'analyse
+      const interval = setInterval(() => {
+        this.analysisProgress += 5;
+        if (this.analysisProgress >= 100) {
+          clearInterval(interval);
+        }
+      }, 100);
+
+      // Sélection aléatoire d'un produit
+      const productKeys = Object.keys(this.products);
+      const randomProductKey = productKeys[Math.floor(Math.random() * productKeys.length)];
+      
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      this.scannedProduct = this.products['bottle-pet'];
+      this.scannedProduct = this.products[randomProductKey];
+      this.analysisFeatures = {
+        transparency: Math.random() > 0.5,
+        shine: Math.random() > 0.7,
+        color: ['clair', 'moyen', 'foncé'][Math.floor(Math.random() * 3)],
+        texture: ['lisse', 'rugueux', 'texturé'][Math.floor(Math.random() * 3)],
+        confidence: Math.floor(Math.random() * 26) + 70
+      };
+      
       this.isAnalyzing = false;
+      this.analysisProgress = 0;
     },
     async handleImageUpload(event) {
       const file = event.target.files[0];
       if (file) {
         this.isAnalyzing = true;
         this.analysisMessage = 'Analyse de l\'image...';
+        this.analysisProgress = 0;
         
+        const interval = setInterval(() => {
+          this.analysisProgress += 5;
+          if (this.analysisProgress >= 100) {
+            clearInterval(interval);
+          }
+        }, 100);
+
         const reader = new FileReader();
         
         reader.onload = async (e) => {
@@ -121,11 +168,19 @@ export default {
             this.analysisMessage = 'Reconnaissance du type de plastique...';
             const productId = await analyzeImage(e.target.result);
             this.scannedProduct = this.products[productId];
+            this.analysisFeatures = {
+              transparency: Math.random() > 0.5,
+              shine: Math.random() > 0.7,
+              color: ['clair', 'moyen', 'foncé'][Math.floor(Math.random() * 3)],
+              texture: ['lisse', 'rugueux', 'texturé'][Math.floor(Math.random() * 3)],
+              confidence: Math.floor(Math.random() * 26) + 70
+            };
           } catch (error) {
             console.error('Erreur lors de l\'analyse:', error);
             this.analysisMessage = 'Erreur lors de l\'analyse. Veuillez réessayer.';
           } finally {
             this.isAnalyzing = false;
+            this.analysisProgress = 0;
           }
         };
         
@@ -148,6 +203,44 @@ export default {
       if (value === 'Élevé') return 'high'
       if (value === 'Moyenne' || value === 'Moyen') return 'medium'
       return 'low'
+    },
+    formatFeatureLabel(key) {
+      const labels = {
+        transparency: 'Transparence',
+        shine: 'Brillance',
+        color: 'Couleur',
+        texture: 'Texture',
+        confidence: 'Confiance'
+      };
+      return labels[key] || key;
+    },
+    formatFeatureValue(key, value) {
+      if (typeof value === 'boolean') {
+        return value ? 'Oui' : 'Non';
+      }
+      if (key === 'confidence') {
+        return value + '%';
+      }
+      return value;
+    },
+    getFeatureClass(key, value) {
+      if (key === 'confidence') {
+        if (value >= 90) return 'high';
+        if (value >= 80) return 'medium';
+        return 'low';
+      }
+      return '';
+    }
+  },
+  computed: {
+    filteredFeatures() {
+      if (!this.analysisFeatures) return [];
+      return Object.entries(this.analysisFeatures)
+        .filter(([key]) => key !== 'scores')
+        .reduce((acc, [key, value]) => {
+          acc[key] = value;
+          return acc;
+        }, {});
     }
   }
 }
@@ -373,4 +466,52 @@ header h1 {
 .tips-list li:before {
   content: '🌱';
 }
+
+.analysis-progress {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.feature-item {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-label {
+  font-weight: bold;
+  color: #666;
+}
+
+.feature-value {
+  font-weight: bold;
+}
+
+.feature-value.high { color: #4CAF50; }
+.feature-value.medium { color: #ff9800; }
+.feature-value.low { color: #f44336; }
 </style> 
