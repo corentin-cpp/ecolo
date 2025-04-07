@@ -2,7 +2,7 @@
 const products = {
   'bottle-pet': {
     name: 'Bouteille en PET',
-    image: 'https://example.com/bottle-pet.jpg',
+    image: ' https://unsplash.com/s/photos/bottle-pet.jpg',
     score: 4,
     impactDetails: [
       { label: 'Type de plastique', value: 'PET (Polyéthylène téréphtalate)' },
@@ -14,13 +14,13 @@ const products = {
     alternatives: [
       {
         name: 'Gourde en inox',
-        image: 'https://example.com/stainless-bottle.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-bottle.jpg',
         score: 9,
         description: 'Réutilisable, durable et sans BPA'
       },
       {
         name: 'Bouteille en verre',
-        image: 'https://example.com/glass-bottle.jpg',
+        image: ' https://unsplash.com/s/photos/glass-bottle.jpg',
         score: 8,
         description: '100% recyclable et sans produits chimiques'
       }
@@ -28,7 +28,7 @@ const products = {
   },
   'plastic-bag': {
     name: 'Sac plastique',
-    image: 'https://example.com/plastic-bag.jpg',
+    image: ' https://unsplash.com/s/photos/plastic-bag.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'Polyéthylène' },
@@ -40,13 +40,13 @@ const products = {
     alternatives: [
       {
         name: 'Sac en tissu',
-        image: 'https://example.com/cotton-bag.jpg',
+        image: ' https://unsplash.com/s/photos/cotton-bag.jpg',
         score: 9,
         description: 'Réutilisable et biodégradable'
       },
       {
         name: 'Panier en osier',
-        image: 'https://example.com/basket.jpg',
+        image: ' https://unsplash.com/s/photos/basket.jpg',
         score: 10,
         description: 'Naturel et durable'
       }
@@ -54,7 +54,7 @@ const products = {
   },
   'plastic-container': {
     name: 'Contenant alimentaire',
-    image: 'https://example.com/plastic-container.jpg',
+    image: ' https://unsplash.com/s/photos/plastic-container.jpg',
     score: 3,
     impactDetails: [
       { label: 'Type de plastique', value: 'Polypropylène' },
@@ -66,13 +66,13 @@ const products = {
     alternatives: [
       {
         name: 'Boîte en verre',
-        image: 'https://example.com/glass-container.jpg',
+        image: ' https://unsplash.com/s/photos/glass-container.jpg',
         score: 9,
         description: 'Réutilisable et sans produits chimiques'
       },
       {
         name: 'Contenant en inox',
-        image: 'https://example.com/stainless-container.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-container.jpg',
         score: 10,
         description: 'Durable et sans danger pour la santé'
       }
@@ -80,7 +80,7 @@ const products = {
   },
   'straw': {
     name: 'Paille en plastique',
-    image: 'https://example.com/straw.jpg',
+    image: ' https://unsplash.com/s/photos/straw.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'Polypropylène' },
@@ -92,13 +92,13 @@ const products = {
     alternatives: [
       {
         name: 'Paille en inox',
-        image: 'https://example.com/stainless-straw.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-straw.jpg',
         score: 9,
         description: 'Réutilisable et durable'
       },
       {
         name: 'Paille en bambou',
-        image: 'https://example.com/bamboo-straw.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-straw.jpg',
         score: 8,
         description: 'Naturelle et biodégradable'
       }
@@ -106,7 +106,7 @@ const products = {
   },
   'cutlery': {
     name: 'Couverts en plastique',
-    image: 'https://example.com/cutlery.jpg',
+    image: ' https://unsplash.com/s/photos/cutlery.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'Polystyrène' },
@@ -118,13 +118,13 @@ const products = {
     alternatives: [
       {
         name: 'Couverts en inox',
-        image: 'https://example.com/stainless-cutlery.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-cutlery.jpg',
         score: 10,
         description: 'Réutilisables et durables'
       },
       {
         name: 'Couverts en bambou',
-        image: 'https://example.com/bamboo-cutlery.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-cutlery.jpg',
         score: 9,
         description: 'Naturels et biodégradables'
       }
@@ -132,7 +132,7 @@ const products = {
   },
   'food-wrap': {
     name: 'Film alimentaire',
-    image: 'https://example.com/food-wrap.jpg',
+    image: ' https://unsplash.com/s/photos/food-wrap.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'Polyéthylène' },
@@ -144,13 +144,13 @@ const products = {
     alternatives: [
       {
         name: 'Bee\'s Wrap',
-        image: 'https://example.com/bees-wrap.jpg',
+        image: ' https://unsplash.com/s/photos/bees-wrap.jpg',
         score: 9,
         description: 'Naturel et réutilisable'
       },
       {
         name: 'Boîtes en verre',
-        image: 'https://example.com/glass-boxes.jpg',
+        image: ' https://unsplash.com/s/photos/glass-boxes.jpg',
         score: 10,
         description: 'Réutilisables et sans danger'
       }
@@ -158,7 +158,7 @@ const products = {
   },
   'shampoo-bottle': {
     name: 'Bouteille de shampoing',
-    image: 'https://example.com/shampoo-bottle.jpg',
+    image: ' https://unsplash.com/s/photos/shampoo-bottle.jpg',
     score: 3,
     impactDetails: [
       { label: 'Type de plastique', value: 'HDPE' },
@@ -170,13 +170,13 @@ const products = {
     alternatives: [
       {
         name: 'Shampoing solide',
-        image: 'https://example.com/solid-shampoo.jpg',
+        image: ' https://unsplash.com/s/photos/solid-shampoo.jpg',
         score: 9,
         description: 'Sans emballage plastique'
       },
       {
         name: 'Recharge en vrac',
-        image: 'https://example.com/bulk-refill.jpg',
+        image: ' https://unsplash.com/s/photos/bulk-refill.jpg',
         score: 8,
         description: 'Réduction des déchets'
       }
@@ -184,7 +184,7 @@ const products = {
   },
   'scanner': {
     name: 'Scanner EcoScan',
-    image: 'https://example.com/scanner.jpg',
+    image: ' https://unsplash.com/s/photos/scanner.jpg',
     score: 8,
     impactDetails: [
       { label: 'Type de plastique', value: 'Électronique' },
@@ -196,13 +196,13 @@ const products = {
     alternatives: [
       {
         name: 'Application mobile',
-        image: 'https://example.com/mobile-app.jpg',
+        image: ' https://unsplash.com/s/photos/mobile-app.jpg',
         score: 9,
         description: 'Solution sans matériel supplémentaire'
       },
       {
         name: 'Scanner portable',
-        image: 'https://example.com/portable-scanner.jpg',
+        image: ' https://unsplash.com/s/photos/portable-scanner.jpg',
         score: 7,
         description: 'Version plus compacte et économe en énergie'
       }
@@ -210,7 +210,7 @@ const products = {
   },
   'toothbrush': {
     name: 'Brosse à dents en plastique',
-    image: 'https://example.com/toothbrush.jpg',
+    image: ' https://unsplash.com/s/photos/toothbrush.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -222,13 +222,13 @@ const products = {
     alternatives: [
       {
         name: 'Brosse à dents en bambou',
-        image: 'https://example.com/bamboo-toothbrush.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-toothbrush.jpg',
         score: 9,
         description: 'Biodégradable et compostable'
       },
       {
         name: 'Brosse à dents rechargeable',
-        image: 'https://example.com/rechargeable-toothbrush.jpg',
+        image: ' https://unsplash.com/s/photos/rechargeable-toothbrush.jpg',
         score: 8,
         description: 'Seule la tête est à changer'
       }
@@ -236,7 +236,7 @@ const products = {
   },
   'coffee-cup': {
     name: 'Gobelet à café',
-    image: 'https://example.com/coffee-cup.jpg',
+    image: ' https://unsplash.com/s/photos/coffee-cup.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'PS' },
@@ -248,13 +248,13 @@ const products = {
     alternatives: [
       {
         name: 'Tasse réutilisable',
-        image: 'https://example.com/reusable-cup.jpg',
+        image: ' https://unsplash.com/s/photos/reusable-cup.jpg',
         score: 10,
         description: 'Réutilisable à l\'infini'
       },
       {
         name: 'Gobelet compostable',
-        image: 'https://example.com/compostable-cup.jpg',
+        image: ' https://unsplash.com/s/photos/compostable-cup.jpg',
         score: 7,
         description: 'Biodégradable en conditions industrielles'
       }
@@ -262,7 +262,7 @@ const products = {
   },
   'water-bottle': {
     name: 'Bouteille d\'eau',
-    image: 'https://example.com/water-bottle.jpg',
+    image: ' https://unsplash.com/s/photos/water-bottle.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'PET' },
@@ -274,13 +274,13 @@ const products = {
     alternatives: [
       {
         name: 'Gourde en inox',
-        image: 'https://example.com/stainless-bottle.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-bottle.jpg',
         score: 10,
         description: 'Réutilisable et durable'
       },
       {
         name: 'Bouteille en verre',
-        image: 'https://example.com/glass-bottle.jpg',
+        image: ' https://unsplash.com/s/photos/glass-bottle.jpg',
         score: 9,
         description: '100% recyclable'
       }
@@ -288,7 +288,7 @@ const products = {
   },
   'shopping-bag': {
     name: 'Sac de courses',
-    image: 'https://example.com/shopping-bag.jpg',
+    image: ' https://unsplash.com/s/photos/shopping-bag.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'LDPE' },
@@ -300,13 +300,13 @@ const products = {
     alternatives: [
       {
         name: 'Sac en tissu',
-        image: 'https://example.com/cotton-bag.jpg',
+        image: ' https://unsplash.com/s/photos/cotton-bag.jpg',
         score: 10,
         description: 'Réutilisable et lavable'
       },
       {
         name: 'Panier en osier',
-        image: 'https://example.com/basket.jpg',
+        image: ' https://unsplash.com/s/photos/basket.jpg',
         score: 9,
         description: 'Naturel et durable'
       }
@@ -314,7 +314,7 @@ const products = {
   },
   'food-container': {
     name: 'Boîte alimentaire',
-    image: 'https://example.com/food-container.jpg',
+    image: ' https://unsplash.com/s/photos/food-container.jpg',
     score: 4,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -326,13 +326,13 @@ const products = {
     alternatives: [
       {
         name: 'Boîte en verre',
-        image: 'https://example.com/glass-container.jpg',
+        image: ' https://unsplash.com/s/photos/glass-container.jpg',
         score: 9,
         description: 'Réutilisable et saine'
       },
       {
         name: 'Boîte en inox',
-        image: 'https://example.com/stainless-container.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-container.jpg',
         score: 10,
         description: 'Durable et écologique'
       }
@@ -340,7 +340,7 @@ const products = {
   },
   'yogurt-pot': {
     name: 'Pot de yaourt',
-    image: 'https://example.com/yogurt-pot.jpg',
+    image: ' https://unsplash.com/s/photos/yogurt-pot.jpg',
     score: 3,
     impactDetails: [
       { label: 'Type de plastique', value: 'PS' },
@@ -352,13 +352,13 @@ const products = {
     alternatives: [
       {
         name: 'Yaourt en pot de verre',
-        image: 'https://example.com/glass-yogurt.jpg',
+        image: ' https://unsplash.com/s/photos/glass-yogurt.jpg',
         score: 9,
         description: '100% recyclable'
       },
       {
         name: 'Yaourt fait maison',
-        image: 'https://example.com/homemade-yogurt.jpg',
+        image: ' https://unsplash.com/s/photos/homemade-yogurt.jpg',
         score: 10,
         description: 'Sans emballage'
       }
@@ -366,7 +366,7 @@ const products = {
   },
   'plastic-wrap': {
     name: 'Film alimentaire',
-    image: 'https://example.com/plastic-wrap.jpg',
+    image: ' https://unsplash.com/s/photos/plastic-wrap.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'LDPE' },
@@ -378,13 +378,13 @@ const products = {
     alternatives: [
       {
         name: 'Bee wrap',
-        image: 'https://example.com/beewrap.jpg',
+        image: ' https://unsplash.com/s/photos/beewrap.jpg',
         score: 9,
         description: 'Naturel et réutilisable'
       },
       {
         name: 'Couvercles en silicone',
-        image: 'https://example.com/silicone-lids.jpg',
+        image: ' https://unsplash.com/s/photos/silicone-lids.jpg',
         score: 8,
         description: 'Réutilisables et durables'
       }
@@ -392,7 +392,7 @@ const products = {
   },
   'disposable-plate': {
     name: 'Assiette jetable',
-    image: 'https://example.com/disposable-plate.jpg',
+    image: ' https://unsplash.com/s/photos/disposable-plate.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'PS' },
@@ -404,13 +404,13 @@ const products = {
     alternatives: [
       {
         name: 'Assiette en bambou',
-        image: 'https://example.com/bamboo-plate.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-plate.jpg',
         score: 9,
         description: 'Biodégradable'
       },
       {
         name: 'Assiette en palmier',
-        image: 'https://example.com/palm-leaf-plate.jpg',
+        image: ' https://unsplash.com/s/photos/palm-leaf-plate.jpg',
         score: 10,
         description: '100% naturelle'
       }
@@ -418,7 +418,7 @@ const products = {
   },
   'disposable-cup': {
     name: 'Verre jetable',
-    image: 'https://example.com/disposable-cup.jpg',
+    image: ' https://unsplash.com/s/photos/disposable-cup.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'PS' },
@@ -430,13 +430,13 @@ const products = {
     alternatives: [
       {
         name: 'Verre réutilisable',
-        image: 'https://example.com/reusable-glass.jpg',
+        image: ' https://unsplash.com/s/photos/reusable-glass.jpg',
         score: 10,
         description: 'Réutilisable à l\'infini'
       },
       {
         name: 'Gobelet en carton',
-        image: 'https://example.com/cardboard-cup.jpg',
+        image: ' https://unsplash.com/s/photos/cardboard-cup.jpg',
         score: 7,
         description: 'Recyclable et compostable'
       }
@@ -444,7 +444,7 @@ const products = {
   },
   'plastic-bottle-cap': {
     name: 'Bouchon de bouteille',
-    image: 'https://example.com/bottle-cap.jpg',
+    image: ' https://unsplash.com/s/photos/bottle-cap.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -456,13 +456,13 @@ const products = {
     alternatives: [
       {
         name: 'Bouchon en liège',
-        image: 'https://example.com/cork-cap.jpg',
+        image: ' https://unsplash.com/s/photos/cork-cap.jpg',
         score: 9,
         description: 'Naturel et biodégradable'
       },
       {
         name: 'Bouchon en métal',
-        image: 'https://example.com/metal-cap.jpg',
+        image: ' https://unsplash.com/s/photos/metal-cap.jpg',
         score: 8,
         description: 'Recyclable à l\'infini'
       }
@@ -470,7 +470,7 @@ const products = {
   },
   'plastic-bag-seal': {
     name: 'Fermeture de sachet',
-    image: 'https://example.com/bag-seal.jpg',
+    image: ' https://unsplash.com/s/photos/bag-seal.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'LDPE' },
@@ -482,13 +482,13 @@ const products = {
     alternatives: [
       {
         name: 'Pince en bois',
-        image: 'https://example.com/wooden-clip.jpg',
+        image: ' https://unsplash.com/s/photos/wooden-clip.jpg',
         score: 9,
         description: 'Naturelle et réutilisable'
       },
       {
         name: 'Élastique naturel',
-        image: 'https://example.com/natural-rubber.jpg',
+        image: ' https://unsplash.com/s/photos/natural-rubber.jpg',
         score: 8,
         description: 'Biodégradable'
       }
@@ -496,7 +496,7 @@ const products = {
   },
   'plastic-straw': {
     name: 'Paille en plastique',
-    image: 'https://example.com/plastic-straw.jpg',
+    image: ' https://unsplash.com/s/photos/plastic-straw.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -508,13 +508,13 @@ const products = {
     alternatives: [
       {
         name: 'Paille en inox',
-        image: 'https://example.com/stainless-straw.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-straw.jpg',
         score: 10,
         description: 'Réutilisable et durable'
       },
       {
         name: 'Paille en bambou',
-        image: 'https://example.com/bamboo-straw.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-straw.jpg',
         score: 9,
         description: 'Naturelle et biodégradable'
       }
@@ -522,7 +522,7 @@ const products = {
   },
   'plastic-cutlery': {
     name: 'Couverts en plastique',
-    image: 'https://example.com/plastic-cutlery.jpg',
+    image: ' https://unsplash.com/s/photos/plastic-cutlery.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'PS' },
@@ -534,13 +534,13 @@ const products = {
     alternatives: [
       {
         name: 'Couverts en inox',
-        image: 'https://example.com/stainless-cutlery.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-cutlery.jpg',
         score: 10,
         description: 'Réutilisables et durables'
       },
       {
         name: 'Couverts en bambou',
-        image: 'https://example.com/bamboo-cutlery.jpg',
+        image: ' https://unsplash.com/s/photos/bamboo-cutlery.jpg',
         score: 9,
         description: 'Naturels et biodégradables'
       }
@@ -548,7 +548,7 @@ const products = {
   },
   'plastic-food-tray': {
     name: 'Barquette alimentaire',
-    image: 'https://example.com/food-tray.jpg',
+    image: ' https://unsplash.com/s/photos/food-tray.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'PET' },
@@ -560,13 +560,13 @@ const products = {
     alternatives: [
       {
         name: 'Barquette en carton',
-        image: 'https://example.com/cardboard-tray.jpg',
+        image: ' https://unsplash.com/s/photos/cardboard-tray.jpg',
         score: 8,
         description: 'Recyclable et compostable'
       },
       {
         name: 'Contenant en verre',
-        image: 'https://example.com/glass-container.jpg',
+        image: ' https://unsplash.com/s/photos/glass-container.jpg',
         score: 9,
         description: 'Réutilisable et sain'
       }
@@ -574,7 +574,7 @@ const products = {
   },
   'plastic-food-container': {
     name: 'Boîte repas en plastique',
-    image: 'https://example.com/food-container.jpg',
+    image: ' https://unsplash.com/s/photos/food-container.jpg',
     score: 3,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -586,13 +586,13 @@ const products = {
     alternatives: [
       {
         name: 'Boîte repas en inox',
-        image: 'https://example.com/stainless-lunchbox.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-lunchbox.jpg',
         score: 10,
         description: 'Durable et écologique'
       },
       {
         name: 'Boîte repas en verre',
-        image: 'https://example.com/glass-lunchbox.jpg',
+        image: ' https://unsplash.com/s/photos/glass-lunchbox.jpg',
         score: 9,
         description: 'Réutilisable et saine'
       }
@@ -600,7 +600,7 @@ const products = {
   },
   'plastic-food-wrap': {
     name: 'Film alimentaire',
-    image: 'https://example.com/food-wrap.jpg',
+    image: ' https://unsplash.com/s/photos/food-wrap.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'LDPE' },
@@ -612,13 +612,13 @@ const products = {
     alternatives: [
       {
         name: 'Bee wrap',
-        image: 'https://example.com/beewrap.jpg',
+        image: ' https://unsplash.com/s/photos/beewrap.jpg',
         score: 9,
         description: 'Naturel et réutilisable'
       },
       {
         name: 'Couvercles en silicone',
-        image: 'https://example.com/silicone-lids.jpg',
+        image: ' https://unsplash.com/s/photos/silicone-lids.jpg',
         score: 8,
         description: 'Réutilisables et durables'
       }
@@ -626,7 +626,7 @@ const products = {
   },
   'plastic-food-bag': {
     name: 'Sachet alimentaire',
-    image: 'https://example.com/food-bag.jpg',
+    image: ' https://unsplash.com/s/photos/food-bag.jpg',
     score: 1,
     impactDetails: [
       { label: 'Type de plastique', value: 'LDPE' },
@@ -638,13 +638,13 @@ const products = {
     alternatives: [
       {
         name: 'Sachet en tissu',
-        image: 'https://example.com/cotton-bag.jpg',
+        image: ' https://unsplash.com/s/photos/cotton-bag.jpg',
         score: 9,
         description: 'Réutilisable et lavable'
       },
       {
         name: 'Sachet en papier',
-        image: 'https://example.com/paper-bag.jpg',
+        image: ' https://unsplash.com/s/photos/paper-bag.jpg',
         score: 8,
         description: 'Recyclable et compostable'
       }
@@ -652,7 +652,7 @@ const products = {
   },
   'plastic-food-container-lid': {
     name: 'Couvercle de boîte',
-    image: 'https://example.com/container-lid.jpg',
+    image: ' https://unsplash.com/s/photos/container-lid.jpg',
     score: 2,
     impactDetails: [
       { label: 'Type de plastique', value: 'PP' },
@@ -664,13 +664,13 @@ const products = {
     alternatives: [
       {
         name: 'Couvercle en verre',
-        image: 'https://example.com/glass-lid.jpg',
+        image: ' https://unsplash.com/s/photos/glass-lid.jpg',
         score: 9,
         description: 'Réutilisable et sain'
       },
       {
         name: 'Couvercle en inox',
-        image: 'https://example.com/stainless-lid.jpg',
+        image: ' https://unsplash.com/s/photos/stainless-lid.jpg',
         score: 10,
         description: 'Durable et écologique'
       }

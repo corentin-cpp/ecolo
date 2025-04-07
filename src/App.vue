@@ -11,6 +11,40 @@
 
     <main class="main-content">
       <div v-if="!currentProduct" class="scan-section">
+        <div class="project-description">
+          <h2><i class="fas fa-leaf"></i> Qu'est-ce qu'EcoScan ?</h2>
+          <p>
+            <strong>EcoScan</strong> est une application qui vous permet d’identifier des produits plastiques à partir
+            d’une simple photo,
+            d’en connaître l’impact environnemental, et de découvrir des <strong>alternatives plus écologiques</strong>.
+          </p>
+
+          <div class="description-sections">
+            <div class="desc-block">
+              <i class="fas fa-camera-retro icon"></i>
+              <h3>1. Analyse visuelle</h3>
+              <p>Importez une image ou prenez une photo d’un objet plastique, et laissez l’intelligence de l'application
+                détecter automatiquement le type de produit.</p>
+            </div>
+
+            <div class="desc-block">
+              <i class="fas fa-seedling icon"></i>
+              <h3>2. Évaluation environnementale</h3>
+              <p>Vous découvrez un score sur 10 indiquant son impact environnemental, basé sur des critères comme la
+                recyclabilité ou le temps de décomposition.</p>
+            </div>
+
+            <div class="desc-block">
+              <i class="fas fa-exchange-alt icon"></i>
+              <h3>3. Alternatives éco-responsables</h3>
+              <p>Pour chaque produit, nous vous proposons des options durables, réutilisables ou biodégradables.</p>
+            </div>
+          </div>
+
+          <p class="conclusion">
+            🌍 Ensemble, réduisons notre empreinte plastique, un geste à la fois.
+          </p>
+        </div>
         <div class="scan-options">
           <button class="scan-button" @click="startScan" :disabled="isAnalyzing">
             <i class="fas fa-camera"></i>
@@ -20,14 +54,8 @@
             <span>ou</span>
           </div>
           <div class="upload-section">
-            <input
-              type="file"
-              id="image-upload"
-              accept="image/*"
-              @change="handleImageUpload"
-              :disabled="isAnalyzing"
-              class="file-input"
-            />
+            <input type="file" id="image-upload" accept="image/*" @change="handleImageUpload" :disabled="isAnalyzing"
+              class="file-input" />
             <label for="image-upload" class="upload-button">
               <i class="fas fa-upload"></i>
               Importer une image
@@ -47,12 +75,7 @@
 
         <div class="product-content">
           <div class="product-image-container">
-            <img 
-              :src="currentProduct.image" 
-              :alt="currentProduct.name"
-              class="product-image"
-              loading="lazy"
-            />
+            <img :src="currentProduct.image" :alt="currentProduct.name" class="product-image" loading="lazy" />
           </div>
 
           <div class="product-details">
@@ -77,12 +100,7 @@
               <h3>Alternatives écologiques</h3>
               <div class="alternatives-grid">
                 <div v-for="(alternative, index) in currentProduct.alternatives" :key="index" class="alternative-card">
-                  <img 
-                    :src="alternative.image" 
-                    :alt="alternative.name"
-                    class="alternative-image"
-                    loading="lazy"
-                  />
+                  <img :src="alternative.image" :alt="alternative.name" class="alternative-image" loading="lazy" />
                   <div class="alternative-info">
                     <h4>{{ alternative.name }}</h4>
                     <div class="alternative-score" :class="getScoreClass(alternative.score)">
@@ -132,7 +150,7 @@ export default {
     async startScan() {
       this.isAnalyzing = true;
       this.progress = 0;
-      
+
       // Simulation de l'analyse
       const interval = setInterval(() => {
         this.progress += 10;
@@ -153,11 +171,11 @@ export default {
         const reader = new FileReader();
         reader.onload = async (e) => {
           const imageData = e.target.result;
-          
+
           // Utilisation de la fonction analyzeImage
           const analysisResult = await analyzeImage(imageData, this.products);
           console.log('Résultat de l\'analyse:', analysisResult);
-          
+
           // Simulation de l'analyse avec progression
           const interval = setInterval(() => {
             this.progress += 10;
@@ -246,6 +264,75 @@ body {
   transition: var(--transition);
 }
 
+.project-description {
+  margin-top: 3rem;
+  text-align: center;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.project-description h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.project-description p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.description-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.desc-block {
+  background-color: var(--background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.desc-block:hover {
+  transform: translateY(-4px);
+}
+
+.desc-block h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.desc-block p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.desc-block .icon {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+}
+
+.conclusion {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: var(--primary-dark);
+}
+
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -303,6 +390,7 @@ body {
 }
 
 .scan-options {
+  margin-left: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,7 +399,8 @@ body {
   max-width: 500px;
 }
 
-.scan-button, .upload-button {
+.scan-button,
+.upload-button {
   width: 100%;
   padding: 1rem 2rem;
   border: none;
@@ -328,12 +417,14 @@ body {
   transition: var(--transition);
 }
 
-.scan-button:hover, .upload-button:hover {
+.scan-button:hover,
+.upload-button:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
-.scan-button:disabled, .upload-button:disabled {
+.scan-button:disabled,
+.upload-button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }
@@ -612,6 +703,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -619,12 +711,37 @@ body {
 }
 
 @media (max-width: 768px) {
-  .product-content {
-    grid-template-columns: 1fr;
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 
   .main-content {
     padding: 1rem;
+  }
+
+  .project-description {
+    padding: 1.5rem;
+  }
+
+  .description-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .scan-options {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .scan-button,
+  .upload-button {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .product-content {
+    grid-template-columns: 1fr;
   }
 
   .product-title {
@@ -637,18 +754,32 @@ body {
 }
 
 @media (max-width: 480px) {
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
+  .title {
+    font-size: 1.2rem;
   }
 
-  .scan-button, .upload-button {
-    padding: 0.8rem 1.5rem;
+  .project-description h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-description p {
     font-size: 0.9rem;
   }
 
+  .scan-button,
+  .upload-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .product-details {
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  .score-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
   }
 }
-</style> 
+</style>
